@@ -2,20 +2,7 @@ DirectoryIndex index.html index.php
 
 RewriteEngine On
 RewriteBase /
-RewriteCond %{REQUEST_FILENAME} -s [OR]
-RewriteCond %{REQUEST_FILENAME} -l [OR]
-RewriteCond %{REQUEST_FILENAME} -f [OR]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^.*$ - [NC,L]
-
-RewriteRule "^/img" "-" [F]
-RewriteRule "^/js" "-" [F]
-RewriteRule "^/fonts" "-" [F]
-RewriteRule "^/css" "-" [F]
-#RewriteRule ^$ /user/event/detail/id/30 [NC.L]
-RewriteRule ^.*$ index.php [NC,L]
-
-php_value  max_execution_time 30
-php_value  display_errors on
-php_value  display_startup_errors on
+    RewriteRule ^(.*?)\.(php|css|js|jpg|jpeg|png|pdf|woff)$ - [L]
+    RewriteRule ^(.+)/(.+)/?$ index.php?page=$1&subpage=$2 [L]
+    RewriteRule ^(.+)$ index.php?page=$1 [L]
 

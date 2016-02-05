@@ -46,6 +46,6 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 class App_Controller extends Zend_Controller_Action {
 
     protected $styles = array('bootstrap', 'style');
-    protected $scripts = array('jquery-2.1.1.min', 'bootstrap', 'maps');
+    protected $scripts = array('jquery-2.1.1.min', 'bootstrap');
  
 }
