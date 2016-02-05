@@ -1,0 +1,46 @@
+<?php echo $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <?php echo $this->headTitle(); ?> 
+        <?php if(!empty($this->styles)): ?>
+            <?php foreach ($this->styles as $style): ?>
+                <?php echo $this->headLink()->appendStylesheet("/css/$style.css");?>
+            <?php endforeach; ?>
+        <?php endif; ?>
+        <?php if(!empty($this->scripts)): ?>
+            <?php foreach ($this->scripts as $script): ?>
+                <?php echo $this->headScript()->appendFile("/js/$script.js");?>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <?php echo $this->navigation()->menu($this->menuMain)->renderMenu($this->menu, array("ulClass" => "nav nav-tabs")) ?>
+                </div>
+            </div>
+            <div class="row">
+                <?php if(!empty($this->module) && ($this->module === 'best')):?>
+                <?php //if(Zend_Auth::getInstance()->hasIdentity()):?>
+                <div class="col-md-2">
+                    <br>
+                    <?php echo $this->navigation()->menu($this->menuNews)->
+                                renderMenu($this->menuNews, 
+                                        array("ulClass" => "nav nav-pills nav-stacked")) ?>
+                </div>
+                <div class="col-md-10">
+                    <?php echo $this->layout()->content ?>
+                </div>
+                <?php //endif;?>
+                <?php else:?>
+                <div class="col-md-12">
+                    <?php echo $this->layout()->content ?>
+                </div>
+                <?php endif;?>
+            </div>
+        </div>
+    </body>
+</html>
+

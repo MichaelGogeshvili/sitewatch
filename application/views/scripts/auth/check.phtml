@@ -1,0 +1,36 @@
+<h1><? echo $this->title?></h1>
+<div class="col-md-12">
+    <table class="table table-striped">
+        <tr>
+            <th>Id сайта</th>
+            <th>Имя сайта</th>
+            <th>Ссылка на сайт</th>
+            <th>Статус</th>
+            <th>Отчет</th>
+        </tr>
+        <?php  if($this->urlsStatus): ?>
+        <?php foreach ($this->urlsStatus as $item): ?>
+        <tr>
+            <td><?php echo $item['id_site'] ?></td>
+            <td><?php echo $item['name'] ?></td>
+            <td><?php echo $item['url'] ?></td>
+            <td><?php echo $item['status'] ?></td>
+            <td><a href="<?php
+                    echo $this->url(array(
+                        'controller' => 'admin',
+                        'action' => 'checksite',
+                        'id' => $item['id_site']
+                    ));
+                    ?>">
+                    Просмотр отчета по сайту
+                </a>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+        <?php endif; ?>
+    </table>
+</div>
+ 
+
+
+

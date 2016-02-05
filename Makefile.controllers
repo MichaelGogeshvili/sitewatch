@@ -1,0 +1,8 @@
+controllers:
+	echo \<\?php class AdminController extends App_Controller {} > application/controllers/AdminController.php
+	echo \<\?php class AuthController extends App_Controller {} > application/controllers/AuthController.php
+	echo \<\?php class ErrorController extends App_Controller {} > application/controllers/ErrorController.php
+	cp ../1/application/controllers/ErrorController.php application/controllers/ErrorController.php
+	echo \<\?php class IndexController extends App_Controller {} > application/controllers/IndexController.php
+	echo \<\?php class LogsController extends App_Controller {} > application/controllers/LogsController.php
+	echo \<\?php class SitesController extends App_Controller {} > application/controllers/SitesController.php
