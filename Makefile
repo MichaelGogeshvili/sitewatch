@@ -1,5 +1,11 @@
+perms: dirs
+	chmod a+rwx application/sql-logs/
 dirs:
 	mkdir -pv \
+	application/sql-logs/ \
+	application/constructors/ \
+	application/models/ \
+	application/modules/ \
 	application/layouts/scripts/ \
 	application/forms/Twitter/ \
 	application/forms/FormHelper/ \
