@@ -1,0 +1,17 @@
+DirectoryIndex index.html index.php
+
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+
+#RewriteRule ^$ /user/event/detail/id/30 [NC.L]
+RewriteRule ^.*$ index.php [NC,L]
+
+php_value  max_execution_time 30
+php_value  display_errors on
+php_value  display_startup_errors on
+
